@@ -1,0 +1,20 @@
+Question 02 : LeetCode 151. Reverse Words in a String
+Solution 02 : 
+class Solution {
+    public String reverseWords(String s) {
+        
+        Stack<String>stack=new Stack<>();
+        StringBuilder st=new StringBuilder();
+        
+        for (String str:s.split(" ")) stack.push(str);
+        
+        while(!stack.isEmpty()){
+            
+        
+        st.append(stack.pop());
+            st.append(" ");
+            
+        }
+        return st.toString().trim().replaceAll(" +"," ");
+    }
+}
