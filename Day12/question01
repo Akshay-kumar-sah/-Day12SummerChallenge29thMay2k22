@@ -1,0 +1,26 @@
+Question 01 : LeetCode 22. Generate Parentheses
+Solution 01: 
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String>ans=new ArrayList<>();
+        backTrack(ans,"",0,0,n);
+        
+        return ans;
+        
+    }
+    public void  backTrack(List<String>ans,String current_string ,int open,int close,int max){
+        
+        
+        if(current_string.length()==max*2){
+            ans.add(current_string);
+            return;
+        }
+        
+        if(open<max) backTrack(ans,current_string+"(",open+1,close,max);
+            if(close<open)backTrack(ans,current_string+")",open,close+1,max);
+        
+    }
+    
+    
+    
+}
